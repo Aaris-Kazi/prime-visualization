@@ -3,8 +3,12 @@ import matplotlib.pyplot as plt
 from is_prime import is_prime_number
 
 
-def polarMap(figSize: tuple) -> Axes:
+def polarMap(figSize: tuple, prime: bool) -> Axes:
     plt.figure(figsize=figSize)
+    title = "Whole Number Cordinate"
+    if prime:
+        title = "Prime Cordinate"
+    plt.title(title)
     ax = plt.subplot(polar=True)
     return ax
 
@@ -20,10 +24,10 @@ def polarPlotter(ax: Axes, max: int, prime: bool):
 
 
 if __name__ =="__main__":
-    max = 10000
+    max = 1000
     figSize = (6, 6)
-    prime =True
+    prime = True
 
-    ax = polarMap(figSize)
+    ax = polarMap(figSize, prime)
     polarPlotter(ax, max, prime)
     plt.show()
