@@ -8,8 +8,8 @@ def polarMap(figSize: tuple, prime: bool) -> Axes:
     title = "Whole Number Cordinate"
     if prime:
         title = "Prime Cordinate"
-    plt.title(title)
     ax = plt.subplot(polar=True)
+    plt.title(title)
     return ax
 
 
